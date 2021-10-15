@@ -1,0 +1,21 @@
+.bloco {
+  min-height: 200px !important;
+}
+.atividades li{
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.selecionado{
+  outline: 3px dashed black;
+}
+.timer,.erro,.pontuacao{
+  width: 60px !important;
+}
+tr{
+  border: none;
+}
+td{
+  padding: 0;
+  margin: 0;
+}

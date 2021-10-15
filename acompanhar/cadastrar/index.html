@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Acompanhar Atividades</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="../../mobile.css">  
+      
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  </head>
+
+  <body onload="mostrar_fonoaudiologos()">
+    <div class="container-fluid">
+      <!-- INICIO  -  HEADER  -  NAV  -->
+      <nav>
+        <div class="nav-wrapper">
+          <a href="../" class="brand-logo center">Cadastrar usuário</a>
+          <ul class="right" id="icone_usuario" style="display:none;">
+            <li>
+              <a class="waves-effect waves-block waves-light profile-button" style="pointer-events: none; cursor: default;">
+                <span class="avatar-status avatar-online">
+                  <i class="material-icons">face</i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript: logout();" class="waves-effect waves-block waves-light profile-button">
+                <span class="avatar-status avatar-online">
+                  <i class="material-icons">logout</i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- FIM  -  HEADER  -  NAV  -->
+      
+      
+      <!-- INICIO  -  ROW PRINCIPAL - CONTEÚDO  -->
+      <div class="row">
+       
+        <!-- INICIO  -  PAINEL DE NAVEGAÇÃO -  MENU  -->
+        <div id="nav-big" class="col s12 m2">
+          <div class="col s9 z-depth-4">
+            <ul class="fala">
+              <li><a href="../../eu_quero/"><img src="../../img/falar.png" alt="eu quero" class="img">Eu Quero</a></li>
+              <li><a href="../../sim_nao/"><img src="../../img/reacao.png" alt="sim e não" class="img">Sim ou Não</a></li>
+              <li><a href="../../atividade/"><img src="../../img/atividade.png" alt="atividade" class="img"> Realizar Atividades</a></li>
+              <li id="acompanhar"><a href="../"><img src="../../img/acompanhar.png" alt="atividade" class="img">Acompanhar</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- FIM  -  PAINEL DE NAVEGAÇÃO -  MENU  -->
+
+        <!-- INICIO - FORMULARIO DE CADASTRO -->
+        <div class="row">
+          <form class="col s9 maior-mob">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" required="" aria-required="true">
+              <label for="email">Email</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="senha" type="password" class="validate" required="" aria-required="true">
+              <label for="senha">Senha</label>
+            </div>
+
+            <div class="input-field col s6">
+              <input id="nome" type="text" class="validate" required="" aria-required="true">
+              <label for="nome">Nome</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="sobrenome" type="text" class="validate" required="" aria-required="true">
+              <label for="sobrenome">Sobrenome</label>
+            </div>
+            <div class="input-field col s12">
+              <select id="tipo">
+                <option value="1">Fonoaudiólogo</option>
+                <option value="2">Paciente</option>
+                <option value="3">Outro</option>
+              </select>
+              <label for="sexo">Tipo de usuário</label>
+            </div>
+            <div id="fono" class="input-field col s12" style='display:none;'>
+              <select id="lista_fonoaudiologo">
+              </select>
+              <label for="lista_fonoaudiologo">Fonoaudiólogos</label>
+            </div>
+            <div id="outro" class="input-field col s12" style='display:none;'>
+              <input id="profissao" type="text" class="validate">
+              <label for="profissao">Profissão</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="nascimento" type="date" max="9999-12-31" class="validate">
+              <label for="nascimento">Data de nascimento</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="cidade" type="text" class="validate">
+              <label for="cidade">Cidade</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="estado" type="text" class="validate">
+              <label for="estado">Estado</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="endereco" type="text" class="validate">
+              <label for="endereco">Endereço</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="bairro" type="text" class="validate">
+              <label for="bairro">Bairro</label>
+            </div>
+            <div class="input-field col s6">
+              <select id="sexo">
+                <option value="f">Feminino</option>
+                <option value="m">Masculino</option>
+              </select>
+              <label for="sexo">Sexo</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="telefone" type="tel" class="validate">
+              <label for="telefone">Telefone</label>
+            </div>
+            
+          </form>
+          <div class="input-field col s9">
+              <button onclick="cadastrarUsuario()" class="btn waves-effect waves-light">Salvar</button>
+          </div>
+        </div>
+        <!-- FIM - FORMULARIO DE CADASTRO -->
+
+
+      </div>
+      <!-- FIM  -  ROW PRINCIPAL - CONTEÚDO  -->
+            
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    
+    
+    <script src="../../js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('select').formSelect();
+        });
+    </script>
+
+  </body>
+</html>
+
+

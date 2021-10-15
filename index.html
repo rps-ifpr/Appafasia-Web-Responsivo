@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+<head>
+
+  <meta charset="utf-8">
+    <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, inicial-scale=1">
+  <title> Aplicativo Afasia </title>
+  <meta name="description content="Aplicativo de CAA para Afasia">
+  <meta name="Keywords content="Afasia, CAA, Aplicativo, Plataforma CAA, APP, Afasico">
+  <meta name="robots" content="indez, follow">
+  <meta name="author" content="Rogerio P. dos Santos">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+  integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="imghome/icone.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="mobile.css">
+</head>
+
+<body>
+
+<!--_______________________________________________________________________________________________-->
+
+
+      <div class="container-fluid">
+          <nav>
+            <div class="nav-wrapper ">
+              <a href="#" class="brand-logo center">Plataforma de CAA - AFASIA </a>
+              <ul class="right" id="icone_usuario" style="display:none;">
+                <li>
+                  <a class="waves-effect waves-block waves-light profile-button" style="pointer-events: none; cursor: default;">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: logout();" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">logout</i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="right" id="botao_entrar" style="display:;">
+                <li>
+                  <a href="javascript: $('#modal1').modal('open');" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">ENTRAR
+                  </a>
+                </li>
+              </ul>
+               <ul class="right" id="botao_video" style="display:;">
+                <li>
+                  <a link href="https://www.youtube.com/watch?v=YzGI2JYbva4&list=PLkOmxusUwOl-RafaFU6E3Z4fquI4e89YH" class="waves-effect waves-block waves-light profile-button" target="_blank">
+                    <span class="avatar-status avatar-online">VÍDEOS
+                  </a>
+                </li>
+              </ul>
+              <ul class="right" id="botao_video" style="display:;">
+                <li>
+                  <a link href="https://pt.wikibooks.org/wiki/APP_AFASIA" class="waves-effect waves-block waves-light profile-button" target="_blank">
+                    <span class="avatar-status avatar-online">SOBRE
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+            <div class="row">
+              <div id="nav-big" class="col s12 m2">
+                <div class="col s12 m9 z-depth-4">
+                  <ul class="fala">
+                    <li><a href="eu_quero"><img src="img/falar.png" alt="eu quero" class="img">Eu Quero</a></li>
+                    <li><a href="sim_nao"><img src="img/reacao.png" alt="sim e não" class="img">Sim ou Não</a></li>
+                    <li><a href="atividade"><img src="img/atividade.png" alt="atividade" class="img"> Realizar Atividades</a></li>
+                    <li id="acompanhar"><a href="acompanhar/"><img src="img/acompanhar.png" alt="atividade" class="img">Acompanhar</a></li>
+                  </ul>
+                </div>
+              </div>
+
+           
+             <div class="col s9 logo" id="palavras">
+                <div class="row">
+                    <img src="img/logo-grande.jpg" alt="logo" class="logo-maior">
+                </div>
+            </div>
+ </div>
+ <footer id="rodape">
+   <ul class="nav-rodape">
+     <li>
+         <a link href="https://pt.wikibooks.org/wiki/APP_AFASIA" target="_blank"> Sobre Aplicativo AFASIA</a>
+     </li>
+   </ul>
+ </footer>
+         </div>
+
+         <div id="modal1" class="modal">
+    <div class="modal-content">
+      <input type="email" name="email" id="email">E-mail
+      <input type="password" name="senha" id="senha">Senha
+    </div>
+    <div class="modal-footer">
+      <a href="#!" onclick="login()" class="waves-effect waves-green btn-flat">Entrar</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>      
+    </div>
+  </div>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+      <script src="js/script.js" type="text/javascript"></script>
+    </body>
+  </html>

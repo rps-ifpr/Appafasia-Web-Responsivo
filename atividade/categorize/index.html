@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+  <html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <link rel="stylesheet" type="text/css" href="style/style.css">
+        
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="../../mobile.css">     
+    </head>
+
+    <body>
+
+<!--_______________________________________________________________________________________________-->
+
+
+      <div class="container-fluid">
+          <nav>
+            <div class="nav-wrapper">
+              <a href="../../" class="brand-logo center">Atividades - Categorias </a>
+             <ul class="right" id="icone_usuario" style="display:none;">
+                <li>
+                  <a class="waves-effect waves-block waves-light profile-button" style="pointer-events: none; cursor: default;">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: logout();" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">logout</i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="right" id="botao_entrar" style="display:;">
+                <li>
+                  <a href="javascript: $('#modal1').modal('open');" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">ENTRAR
+                  </a>
+                </li>
+              </ul>
+<!--_______________________________________________________________________________________________-->
+<!-- Modal Trigger -->
+            </div>
+          </nav>
+
+<!--_______________________________________________________________________________________________-->
+
+            <div class="row">
+              <div class="col s1">
+                <ul class="fala">
+                  <li><a href="../"><i class="small material-icons">arrow_back</i></a></li>
+                </ul>
+              </div>
+
+<!--_______________________________________________________________________________________________-->
+              
+              <div class="col s12 m10 z-depth-4" id="palavras">
+
+
+                <div class="col s12 m6">
+                  <a href="2/" title=""><div class="card">
+                    <div class="card-image">
+                      <img src="2.png">
+                    </div>
+                    <div class="card-content">
+                      <p>2 CATEGORIAS</p>
+                    </div>
+                  </div></a>
+                </div> 
+
+                <div class="col s12 m6 off-mob tablee">
+                  <a href="3/" title=""><div class="card">
+                    <div class="card-image">
+                      <img src="3.png">
+                    </div>
+                    <div class="card-content">
+                      <p>3 CATEGORIAS</p>
+                    </div>
+                  </div></a>
+                </div> 
+
+
+                <div class="col s12 m6 off-mob">
+                  <a href="4/" title=""><div class="card">
+                    <div class="card-image">
+                      <img src="4.png">
+                    </div>
+                    <div class="card-content">
+                      <p>4 CATEGORIAS</p>
+                    </div>
+                  </div></a>
+                </div> 
+
+
+                <!--div class="col s6">
+                  <a href="2/" title="categorize com 2"><p class="flow-text">categorize com 2 colunas</p>
+                  <img class="responsive-img" src="2.png" alt=""></a>
+                </div>
+                <div class="col s6">
+                  <a href="3/" title="categorize com 3"><p class="flow-text">categorize com 3 colunas</p>
+                  <img class="responsive-img" src="3.png" alt=""></a>
+                </div>
+                <div class="col s6">
+                  <a href="4/" title="categorize com 4"><p class="flow-text">categorize com 4 colunas</p>
+                  <img class="responsive-img" src="4.png" alt=""></a>
+                </div>
+              </div-->
+
+         </div>
+
+      </div>
+
+ <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <input type="email" name="email" id="email">E-mail
+      <input type="password" name="senha" id="senha">Senha
+    </div>
+    <div class="modal-footer">
+      <a href="#!" onclick="login()" class="waves-effect waves-green btn-flat">Entrar</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>      
+    </div>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="../../js/script.js" type="text/javascript"></script>
+
+  </body>
+</html>

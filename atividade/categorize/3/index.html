@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+  <html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <link rel="stylesheet" type="text/css" href="style/style.css">
+      <link rel="stylesheet" type="text/css" href="../../../mobile.css"> 
+        
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+
+<!--_______________________________________________________________________________________________-->
+
+
+      <div class="container-fluid">
+          <nav>
+            <div class="nav-wrapper">
+              <a href="../../" class="brand-logo center">Clique na imagem para selecionar</a>
+              <ul class="right" id="icone_usuario" style="display:none;">
+                <li>
+                  <a class="waves-effect waves-block waves-light profile-button" style="pointer-events: none; cursor: default;">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript: logout();" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">
+                      <i class="material-icons">logout</i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <ul class="right" id="botao_entrar" style="display:;">
+                <li>
+                  <a href="javascript: $('#modal1').modal('open');" class="waves-effect waves-block waves-light profile-button">
+                    <span class="avatar-status avatar-online">ENTRAR
+                  </a>
+                </li>
+              </ul>
+<!--_______________________________________________________________________________________________-->
+<!-- Modal Trigger -->
+            </div>
+          </nav>
+
+<!--_______________________________________________________________________________________________-->
+
+            <div class="row">
+              <div class="col s1">
+                <ul class="fala">
+                  <li><a href="../"><i class="small material-icons">arrow_back</i></a></li>
+                </ul>
+              </div>
+
+<!--_______________________________________________________________________________________________-->
+              
+              <div class="col s12 m8" id="palavras">
+                
+                <div class="col s12 z-depth-4 altura-rela">
+                  
+                  <div class="col s12" style="min-height: 100px; margin: 10px">
+                    
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="ABACAXI" value="frutas" id="abacaxi"><img src="img/abacaxi.png" onclick="aud1()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="MEIAS" value="vestimentas" id="meias"><img src="img/meias.png" onclick="aud2()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="PEIXE" value="animais" id="peixe"><img src="img/peixe.png" onclick="aud3()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="CALÇA" value="vestimentas" id="calca"><img src="img/calca.png" onclick="aud4()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="CAMISETA" value="vestimentas" id="camiseta"><img src="img/camiseta.png" onclick="aud5()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="CACHORRO" value="animais" id="cachorro"><img src="img/cachorro.png" onclick="aud6()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="GALINHA" value="animais" id="galinha"><img src="img/galinha.png" onclick="aud7()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="LARANJA" value="frutas" id="laranja"><img src="img/laranja.png" onclick="aud8()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="MAÇA" value="frutas" id="maca"><img src="img/maca.png" onclick="aud9()">
+
+                    </div><div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="PASSARO" value="animais" id="passaro"><img src="img/passaro.png" onclick="aud10()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="CAMISA" value="vestimentas" id="camisa"><img src="img/camisa.png" onclick="aud11()"></div>
+
+                    <div class="categorize_item col s2 tooltipped aux" data-position="top" data-tooltip="MORANGO" value="frutas" id="morango"><img src="img/morango.png" onclick="aud12()"></div>
+
+
+                  </div>
+                    <div class="categorize col s4" value="vestimentas"><img src="img/tenis.png" class="col s6"></div>
+
+                    <div class="categorize col s4" value="frutas"><img src="img/uva.png" class="col s6"></div>
+
+                    <div class="categorize col s4" value="animais"><img src="img/gato.png" class="col s6"></div>
+
+
+                    <div class="col s4">CATEGORIA VESTIMENTAS</div><!-- nome das categorias-->
+                    <div class="col s4">CATEGORIA FRUTAS</div><!-- nome das categorias-->
+                    <div class="col s4">CATEGORIA ANIMAIS</div><!-- nome das categorias-->
+
+<!--vestimentas, animais, alimentos, |||| cores, moveis||-->
+<!--horario-->
+<!--legenda-->
+
+                </div>
+
+              </div>
+<!--__________________________________________________________________________________________________-->
+              <div class="col s12 m2 z-depth-1 altura-rela" id="palavras">
+                <table>
+                  <thead>
+                    <tr>
+                      <th colspan="2" id="data"></th>
+                    </tr>
+                  </thead>
+                  <tr>
+                <td>Tempo</td>
+                <td><input disabled type="text" name="timer" class="form-control timer" placeholder="0 sec"></td>
+                  </tr>
+
+                  <tr>
+                <td>Erros</td>
+                <td><input disabled type="text" class="form-control erro" value="0"></td>
+                  </tr>
+
+
+                 <tr>
+                <td>Pontuação </td><td><input disabled type="text" class="form-control pontuacao" placeholder="0" value="0"></td>
+                  </tr>
+                  
+                  <tr>
+                <td colspan="2"><label onclick="som()"><input type="checkbox" class="som"><span>Som</span></label></td>
+                  </tr>
+                  <tr>
+                <td colspan="2"><label><input type="checkbox" class="supervisionado"><span>Supervisionado</span></label></td>
+                  </tr>
+                  <tr>
+                <td colspan="2"><label><input type="checkbox" class="legenda"><span>Legenda</span></label></td>
+                  </tr>
+                </table>
+                <br>
+                <div id="pesquisa">
+                  <p>Pesquisa de Satisfação</p>
+                  <a href="#" class="btn btn-large waves-effect waves-light green lighten-3"  onclick="terminarAtividade('gostei', 'categorize3')"><i class="material-icons green-text">mood</i></a>
+                  <a href="#" class=" btn btn-large waves-effect waves-light red lighten-3"  onclick="terminarAtividade('nao gostei', 'categorize3')"><i class="material-icons red-text">mood_bad</i></a>
+                  <p id="mensagem_salvar" style="display:none; color:red; font-weight: bold;">Não esqueça de avaliar a atividade para salvá-la</p>
+                </div>
+                
+            </div>
+
+         </div>
+
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <input type="email" name="email" id="email">E-mail
+      <input type="password" name="senha" id="senha">Senha
+    </div>
+    <div class="modal-footer">
+      <a href="#!" onclick="login()" class="waves-effect waves-green btn-flat">Entrar</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>      
+    </div>
+  </div>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.6.5/timer.jquery.min.js'></script>
+  <script src="js/script.js" type="text/javascript"></script>
+  <script src="../../../js/script.js" type="text/javascript"></script>
+
+  </body>
+</html>

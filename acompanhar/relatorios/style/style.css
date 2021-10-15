@@ -1,0 +1,25 @@
+.img{
+  height: auto;
+  width: 100%;
+}
+.fala li{
+  margin-top: 20px;
+  text-align: center;
+/*  border-bottom: solid 1px black;*/
+}
+.card-image img{
+  height: 120px;
+  width: auto;
+}
+.row p{
+  text-align: center;
+}
+/*-----------------------------------------------*/
+.bloco,.bloco2 {
+  /*float: left;*/
+  width: 200px;
+  height: 85px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}

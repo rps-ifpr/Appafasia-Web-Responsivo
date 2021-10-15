@@ -1,0 +1,32 @@
+.bloco {
+  height: 85px;
+  outline: 1px solid black;
+  margin: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+.bloco img{
+  max-height: 100%;
+}
+.bloco p{
+  position: relative;
+  padding-top: 20px !important;
+}
+.atividades li{
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.selecionado{
+  outline: 3px dashed black;
+}
+.timer,.erro,.pontuacao{
+  width: 60px !important;
+}
+tr{
+  border: none;
+}
+td{
+  padding: 0;
+  margin: 0;
+}

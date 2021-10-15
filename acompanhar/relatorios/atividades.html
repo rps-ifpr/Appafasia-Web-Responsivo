@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Acompanhar Atividades</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+      
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../../mobile.css">  
+
+    <script type="text/javascript">
+      var query = location.search.slice(1).split('=');
+      console.log(query[1]);
+    </script>
+  </head>
+
+  <body onload="relatorioGeralAtividade(query[1])">
+    <div class="container-fluid">
+
+      <!-- INICIO  -  HEADER  -  NAV  -->
+      <nav>
+        <div class="nav-wrapper">
+          <a href="../" class="brand-logo center" id="header">Relatórios de atividades</a>
+          <ul class="right" id="icone_usuario" style="display:none;">
+            <li>
+              <a class="waves-effect waves-block waves-light profile-button" style="pointer-events: none; cursor: default;">
+                <span class="avatar-status avatar-online">
+                  <i class="material-icons">face</i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript: logout();" class="waves-effect waves-block waves-light profile-button">
+                <span class="avatar-status avatar-online">
+                  <i class="material-icons">logout</i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <ul class="right" id="botao_entrar" style="display:;">
+            <li>
+              <a href="javascript: $('#modal1').modal('open');" class="waves-effect waves-block waves-light profile-button">
+                <span class="avatar-status avatar-online">ENTRAR
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- FIM  -  HEADER  -  NAV  -->
+      
+      <!-- INICIO  -  ROW PRINCIPAL - CONTEÚDO  -->
+      <div class="row">
+        
+        <!-- INICIO  -  PAINEL DE NAVEGAÇÃO -  MENU  -->
+        <div  id="nav-big" class="col s12 m2">
+          <div class="col s9 z-depth-4">
+            <ul class="fala">
+              <li><a href="../../eu_quero/"><img src="../../img/falar.png" alt="eu quero" class="img">Eu Quero</a></li>
+              <li><a href="../../sim_nao/"><img src="../../img/reacao.png" alt="sim e não" class="img">Sim ou Não</a></li>
+              <li><a href="../../atividade/"><img src="../../img/atividade.png" alt="atividade" class="img"> Realizar Atividades</a></li>
+              <li id="acompanhar"><a href="../"><img src="../../img/acompanhar.png" alt="atividade" class="img">Acompanhar</a></li>
+              <li><a href="../../ajuda/">Sobre</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- FIM  -  PAINEL DE NAVEGAÇÃO -  MENU  -->
+
+        <!-- INICIO  -  TABELA DO RELATÓRIO  -->
+        <div class="maior-mob col s9 center"  style="padding-top: 20px">
+          <div class="input-field col s3">
+            <input id="data_inicial" type="date" max="9999-12-31" class="validate">
+            <label for="data_inicial">Data inicial</label>
+          </div>
+          <div class="input-field col s3">
+            <input id="data_final" type="date" max="9999-12-31" class="validate">
+            <label for="data_final">Data final</label>
+          </div>
+          <div class="input-field col s3">   
+            <select style="display:block;" id="data_reacao">
+              <option value=""></option>
+              <option value="gostei">Gostei</option>
+              <option value="nao">Não gostei</option>
+            </select>
+            <label class="label">Reação</label>
+          </div>
+          <div class="input-field col s3">
+            <label class="label">Som</label>
+            <select style="display:block;" id="data_som">
+              <option value=""></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="input-field col s3">
+            <label class="label">Legenda</label>
+            <select style="display:block;" id="data_legenda">
+              <option value=""></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="input-field col s3">
+            <label class="label">Supervisionado</label>
+            <select style="display:block;" id="data_supervisionado">
+              <option value=""></option>
+              <option value="sim">Sim</option>
+              <option value="nao">Não</option>
+            </select>
+          </div>
+          <div class="input-field col s3">
+            <label class="label">Ordenar por:</label>
+            <select style="display:block;" id="data_ordem">
+              <option value=""></option>
+              <option value="mais">Mais pontos</option>
+              <option value="menos">Menos pontos</option>
+              <option value="maist">Mais tempo</option>
+              <option value="menost">Menos tempo</option>
+              <option value="maise">Mais erros</option>
+              <option value="menose">Menos erros</option>
+            </select>
+          </div>
+          <div class="input-field col s12" style="text-align:right;"">
+            <button onclick="relatorioGeralAtividade(query[1])" class="btn waves-effect waves-light" type="submit" name="action">Filtrar</button>
+          </div>
+          <div class="row">
+            <table class="striped" cellpadding="1" cellspacing="1" class="table table-hover" id="tabelaAtividade">
+              <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Usuario</th>
+                    <th class="off-mob">Erros</th>
+                    <th>Pontuação</th>
+                    <th class="off-mob">Tempo</th>
+                    <th>Reação</th>
+                    <th class="off-mob">Som</th>
+                    <th class="off-mob">Legenda</th>
+                    <th class="off-mob">Supervisionado</th>
+                </tr>
+              </thead>
+              <tbody id="dadosAtividade">
+              </tbody>
+            </table>
+            <div class="col-md-12 center text-center">
+              <span class="left" id="total"></span>
+              <ul class="pagination pager" id="paginasAtividade"></ul>
+            </div>
+          </div>
+        </div>       
+        <!-- FIM -  TABELA DO RELATÓRIO  -->
+
+        <!-- INICIO  -  GRAFICOS  -->
+        <div class="maior-mob col s9 center">
+          <div class="row">
+              <div id="graficoPontuacaoAtividade" style="height: 370px; width: 100%;"></div>
+              <div id="graficonovo"></div>
+          </div>
+        </div>          
+        <div style="display:none" class="col s9 center">
+          <div class="row">
+              <div id="graficoReacoesAtividade"></div>
+          </div>
+        </div>
+        <!-- FIM  -  GRAFICOS  -->
+
+      </div>
+      <!-- FIM  -  ROW PRINCIPAL - CONTEÚDO  -->
+           
+    </div>
+
+    <!-- COMEÇO  -  MODAL - LOGIN  -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <input type="email" name="email" id="email">E-mail
+        <input type="password" name="senha" id="senha">Senha
+      </div>
+      <div class="modal-footer">
+        <a href="#!" onclick="login()" class="waves-effect waves-green btn-flat">Entrar</a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Fechar</a>      
+      </div>
+    </div>
+    <!-- FIM  -  MODAL - LOGIN  -->
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="../../js/script.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/pagination.js"></script>
+
+
+     <script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+  </body>
+</html>

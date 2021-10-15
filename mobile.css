@@ -1,0 +1,230 @@
+.clr{
+    clear:both;
+}
+.grafico-box{
+    border-right:1px solid #CCC;
+}
+.title-gr{
+    font-weight:bold;
+    margin:45px 0;
+}
+.grafico-box h4{
+    font-size:17px;
+    font-weight:bold;
+    margin-top:0;
+}
+.grafico-box .barras-gr .barra{
+    font-size:13px;
+    width:0;
+    margin-bottom:15px;
+    background: red;
+    padding: 5px 0;
+    color:#FFF;
+    font-weight:bold;
+    min-width:35%;
+}
+.grafico-box .barras-gr .barra.sim{
+    background: #039be5;
+}
+#palavras.logo{
+    text-align: center;
+    padding-top: 250px;
+}
+.altura-rela .bloco{
+	height: 30%;
+}
+.btn-large{
+    height: 72px !important;
+    line-height: 72px !important;
+    padding: 0 12px !important;
+}
+.btn-large i {
+    font-size: 4.6rem !important;
+}
+.maior-mob .input-field{
+    height: 54px;
+}
+.maior-mob .input-field .label{
+    color: #9e9e9e;
+    position: absolute;
+    top: -29px;
+    font-size: 12px;
+}
+@media (max-width : 800px) {
+    .grafico-box .barras-gr .barra{
+      min-width:85%;
+    }
+    .input-field.col.s3{
+        width: 50%;
+    }
+    .mob-dife{
+        min-height: 400px !important;
+    }
+    #palavras.logo{
+        text-align: center;
+        padding-top: 50px;
+    }
+    #palavras.logo img{
+        width: 80%;
+    }
+	.brand-logo.center{
+		left: 0 !important;
+	    margin: 0;
+	    font-size: 16px;
+        -webkit-transform: translateX(0) !important; 
+        transform: translateX(0) !important; 
+        padding-left: 25px;
+	}
+    #nav-big{
+        width:100%;
+    	padding: 0;
+    }
+    #nav-big ul li{
+        width:25%;
+        text-align: center;
+        float: left;
+    }
+    #nav-big ul li img{
+        width:95%;
+    }
+    #nav-big .z-depth-4{
+    	width: 100%;
+    	padding-bottom: 20px;
+    }
+    #palavras {
+    	width: 100%;
+    	padding-top: 30px;
+        margin-left: 0;
+    }
+    #palavras.categorize-box{
+        padding: 0;
+    }
+
+    #palavras .row .col.s3{
+    	width: 50%;
+    }
+    #palavras .row .col.s3 .card-image img{
+    	height: 125px;
+    }
+    .categorize_item{
+        width: 25% !important;
+    }
+    .categorize img{
+        width: 50% !important;
+    }
+    .categorize-box .complet{
+        width: 100% !important;
+    }
+    .categorize-box .mob-cl4{
+        width: 25% !important;
+    }
+    .off-mob{
+        display: none !important; 
+    }
+    .col.s9.maior-mob{
+        width: 100% !important;
+        padding-top: 25px;
+    }
+    #pesquisa{
+    	text-align: center;
+    }
+    .mob-meio{
+    	width: 50% !important;
+    	text-align: center;
+    }
+    .mob-meio img{
+    	height: 150px !important;
+    }
+    .card-content p{
+    	height: auto !important;
+    }
+    .categorize-box .col.s5{
+    	width: 48% !important;
+    	box-sizing: border-box;
+    	margin: 2%;
+    	margin-left: 0; 
+    }
+    .padding-texto{
+        padding: 20px;
+    }
+    .maior-mob .striped{
+        margin: 0 20px;
+    }
+    .bloco p{
+        font-size: 19px;
+        top: 50%;
+        position: relative;
+        margin-top: -14px;
+        padding-top: 0 !important;
+    }
+}
+@media (max-width: 768px) and (orientation: landscape) {
+    #palavras .row .col.s3{
+        width: 33%;
+    }
+    .padding-texto{
+        padding: 20px;
+    }
+    .mob-meio{
+        width: 33% !important;
+    }
+    .off-mob{
+        display: none !important; 
+    }
+    .padding-texto{
+        padding: 20px;
+    }
+    .maior-mob .striped{
+        margin: 0 20px;
+    }
+    .mob-dife{
+        min-height: 400px !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    #palavras .row .col.s3{
+        width: 33%;
+    }
+    .mob-meio{
+        width: 33% !important;
+    }
+    .padding-texto{
+        padding: 20px;
+    }
+    .off-mob{
+        display: none !important; 
+    }
+    .padding-texto{
+        padding: 20px;
+    }
+    .maior-mob .striped{
+        margin: 0 20px;
+    }
+    .mob-dife{
+        min-height: 400px !important;
+    }
+    .off-mob.tablee{
+        display: block !important; 
+    }
+    
+}
+#rodape{
+	background-color: #ee6e73;
+	padding: 12px 20px;
+}
+#rodape ul{
+	margin: 0;
+	text-align: center;
+}
+#rodape li a{
+	color: #FFF;
+	text-transform: uppercase;
+}
+#rodape li a:hover{
+	text-decoration: underline;
+}
+.red.lighten-3,
+.green.lighten-3{
+	background: #FFF !important;
+}
+/*  <li><a href="ajuda">Sobre</a></li> */
